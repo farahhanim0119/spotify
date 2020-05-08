@@ -1,0 +1,17 @@
+<div class="card mb-3">
+    <div class="card-body bg-light">
+      <h5 class="card-title"><p class="data">{{ album.name }}</p></h5>
+      <h6 class="card-subtitle text-muted">S o n g</h6>
+    </div>
+    <img
+    class="img-box"
+    *ngIf="album.images.length > 0"
+    [src]="album.images[0].url"
+    alt=""
+  />
+  
+  <h3 class="card-header"><button class="button button1" class="btn btn-outline-primary" (click)="onViewDetails(album.id)">
+    V i e w  D e t a i l s
+     </button></h3>
+    
+    
