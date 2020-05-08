@@ -1,0 +1,30 @@
+.title {
+    text-align: center;
+    font-family: "MV Boli";
+    font-size: 50px;
+
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .data {
+    font-family: "Ink Free";
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    background-color: rgb(185, 143, 143);
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
