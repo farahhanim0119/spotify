@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css" />
+<br />
+
+<div *ngIf="albumDetails">
+  <div class="row">
+    <div class="column">
+      <img [src]="albumDetails.images[0].url" class="center" alt="" />
+    </div>
+    <div class="column">
+      <button
+        class="button button2"
+        (click)="viewInSpotify(albumDetails.external_urls.spotify)"
+      >
+        View In Spotify
+      </button>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<table class="table table-bordered">
+  <tr class="w3-purple">
+    <th>
+      Name of Song
+    </th>
+    <th>Preview Song</th>
+  </tr>
+
+  <ng-container *ngIf="tracksDetails">
+    <tr *ngFor="let item of tracksDetails.items">
+      <td>
+        <p>{{ item.name }}</p>
+      </td>
+      <td>
+        <a
+          *ngIf="item.preview_url !== null"
+          [href]="item.preview_url"
+          target="_blank"
+          >Preview Track</a
+        >
+      </td>
+    </tr>
+  </ng-container>
+</table>
