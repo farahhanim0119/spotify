@@ -1,0 +1,33 @@
+<br />
+<link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css" />
+
+<div class="jumbotron">
+  <h1 class="display-3">N e e d  S o m e  M u s i c ?</h1>
+  <p class="lead">Use S P O T I F Y to find your favourite music now!</p>
+  <hr class="my-4">
+  
+  <form>
+
+  <div class="form-group"></div>
+
+    <input
+    class="form-control mr-sm-2"
+    color="black"
+    type="text"
+    [(ngModel)]="searchStr"
+    placeholder="Search Your Favourite Artist Name"
+    (keyup)="searchTerm$.next()"
+    [ngModelOptions]="{ standalone: true }"
+  />
+
+    <!--<button type="submit" (click)="searchMusic() name="submit" value="submit"</button>  -->
+
+</form>
+
+<div *ngFor="let item of resultItems">
+  <app-result-box
+    [musicData]="item"
+    (viewMusicDetails)="listenForDetails($event)"
+  ></app-result-box>
+</div>
+</div>
